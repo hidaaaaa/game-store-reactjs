@@ -1,0 +1,134 @@
+@import "../../../Assets/style/colors.scss";
+@import "../../../Assets/style/varible.scss";
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	height: 4rem;
+
+	&__item {
+		min-width: 10%;
+
+		& > ul {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			& > li {
+				padding: 0 0.5rem;
+
+				& > a {
+					color: $second-text-color;
+
+					&.active {
+						color: $primary-text-color;
+					}
+				}
+
+				.navbar__SearchBox {
+					padding: 0.5rem;
+					background-color: $second-color;
+					border-radius: 3px;
+
+					&:focus-within {
+						background-color: $third-color;
+
+						& > .searchForm > .searchForm__icon {
+							color: $primary-text-color;
+						}
+					}
+				}
+			}
+		}
+	}
+	//mobile
+
+	&__dropdown {
+		position: static;
+		display: inline-block;
+
+		&--title {
+			color: $primary-text-color;
+			opacity: 0.6;
+
+			font-size: 0.6rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			& > * {
+				padding: 0.25rem;
+			}
+		}
+
+		&--group {
+			line-height: initial;
+
+			& > span {
+				font-size: 0.8rem;
+			}
+		}
+
+		&--content {
+			display: none;
+			position: absolute;
+			background-color: $primary-color;
+			padding: 12px 16px;
+			z-index: 1;
+			width: 100%;
+			left: 0;
+			top: 7.25rem;
+
+			& > a {
+				display: inline-block;
+			}
+
+			&.show-dropdown {
+				display: grid;
+			}
+		}
+	}
+
+	&.mobile {
+		& > .navbar__item {
+			& > .navbar__SearchBox {
+				position: static;
+				display: inline-block;
+
+				&--content {
+					display: none;
+					position: absolute;
+					background-color: $second-color;
+					padding: 12px 16px;
+					z-index: 1;
+					width: 100%;
+					left: 0;
+					top: 7.25rem;
+					height: 4rem;
+
+					&:focus-within {
+						background-color: $third-color;
+					}
+
+					&.show-dropdown {
+						display: flex;
+					}
+				}
+			}
+		}
+	}
+}
+
+.desktop {
+	@include desktopAndLess {
+		display: none;
+	}
+}
+
+.mobile {
+	@include desktop {
+		display: none;
+	}
+}

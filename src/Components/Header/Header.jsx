@@ -7,15 +7,24 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "Assets/image/logo.png";
-import React, { useState } from "react";
+import useWindowSize from "CustomHook/useWindowSize";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./style/header.scss";
 
 function Header() {
+	const [width] = useWindowSize();
 	const [toggleMobile, setToggleMobile] = useState(false);
 	const [toggleMenu, setToggleMenu] = useState("");
 
 	const location = useLocation();
+
+	useEffect(() => {
+		if (width > 1024) {
+			setToggleMobile(false);
+			setToggleMenu(false);
+		}
+	}, [width]);
 
 	const handleShowNavbar = () => {
 		setToggleMobile(!toggleMobile);
@@ -41,22 +50,28 @@ function Header() {
 
 			<div className={`header__menu ${toggleMobile ? "show-menu" : ""}`}>
 				<ul className="top">
-					<li className={location.pathname === "/store" ? "active" : ""}>
+					<li
+						className={location.pathname.search("/store") > -1 ? "active" : ""}
+					>
 						<Link to="/store" className="header__link">
 							Store
 						</Link>
 					</li>
-					<li className={location.pathname === "/news" ? "active" : ""}>
+					<li
+						className={location.pathname.search("/news") > -1 ? "active" : ""}
+					>
 						<Link to="/news" className="header__link ">
 							News
 						</Link>
 					</li>
-					<li className={location.pathname === "/faq" ? "active" : ""}>
+					<li className={location.pathname.search("/faq") > -1 ? "active" : ""}>
 						<Link to="/faq" className="header__link">
 							FAQ
 						</Link>
 					</li>
-					<li className={location.pathname === "/help" ? "active" : ""}>
+					<li
+						className={location.pathname.search("/help") > -1 ? "active" : ""}
+					>
 						<Link to="/help" className="header__link">
 							Help
 						</Link>

@@ -1,13 +1,19 @@
+import Navbar from "Components/Navbar/Navbar";
 import React from "react";
 import { Route, Switch, useRouteMatch } from "react-router";
-import MainPage from "./Pages/MainPage";
+import BrowsePage from "./Pages/BrowsePage/BrowsePage";
+import MainPage from "./Pages/MainPage/MainPage";
 
 function HomeView(props) {
 	const match = useRouteMatch();
 	return (
-		<Switch>
-			<Route path={match.url} exact component={MainPage} />
-		</Switch>
+		<div>
+			<Navbar />
+			<Switch>
+				<Route path={match.url} exact component={MainPage} />
+				<Route path={`${match.url}/browse`} component={BrowsePage} />
+			</Switch>
+		</div>
 	);
 }
 

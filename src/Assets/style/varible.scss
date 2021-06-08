@@ -44,8 +44,14 @@ $z-fixed: 100;
 	}
 }
 
-@mixin tabletAndDesktop {
+@mixin tabletAndMore {
 	@media (min-width: #{$tablet-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin desktopAndLess {
+	@media (max-width: #{$desktop-width}) {
 		@content;
 	}
 }

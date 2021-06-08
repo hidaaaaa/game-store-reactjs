@@ -9,13 +9,16 @@ function App() {
 		<div className="App">
 			<Layout className="layout">
 				<Header />
-				<Switch>
-					<Redirect from="/" to="/store" exact />
-					<Redirect from="/post-list/:pistId" to="/posts/:postId" exact />
 
-					<Route path="/" component={HomeView} exact />
-					{/* <Route path="/mua-ve" component={BuyTicketFeature} /> */}
-				</Switch>
+				<div className="body">
+					<Switch>
+						<Redirect from="/" to="/store" exact />
+						<Redirect from="/post-list/:pistId" to="/posts/:postId" exact />
+
+						<Route path="/store" component={HomeView} />
+						{/* <Route path="/mua-ve" component={BuyTicketFeature} /> */}
+					</Switch>
+				</div>
 			</Layout>
 		</div>
 	);
