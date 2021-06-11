@@ -1,0 +1,92 @@
+[
+	{
+		"id": "1",
+		"createdAt": "2021-06-07T22:47:40.990Z",
+		"name": "MAEGA Sale",
+		"thumbImage": "https://i.ibb.co/KW0KgkB/image.png",
+		"mainImage": "https://i.ibb.co/TWCck2q/megasale-thumbnail.jpg",
+		"nameImage": "https://i.ibb.co/zXh7dDc/megasale.png",
+		"title": "SALES AND SPECIALS",
+		"discription": "It’s the biggest sale of the year. Save up to 75% on great games and earn Epic Coupons until June 17!",
+		"price": {
+			"type": "none",
+			"oldPrice": "0",
+			"salePrice": "0"
+		}
+	},
+	{
+		"id": "2",
+		"createdAt": "2021-06-08T07:01:51.891Z",
+		"name": "FREE GAME",
+		"thumbImage": "https://i.ibb.co/KW0KgkB/image.png",
+		"mainImage": "https://i.ibb.co/JK36zhg/image.png",
+		"nameImage": "https://i.ibb.co/jfSKqC8/image.png",
+		"title": "WEEKLY FREE TITLE",
+		"discription": "The Vault Is Open: Claim Frostpunk for FREE until June 10!",
+		"price": {
+			"type": "free",
+			"oldPrice": "0",
+			"salePrice": "0"
+		}
+	},
+	{
+		"id": "3",
+		"createdAt": "2021-06-07T10:16:19.758Z",
+		"name": "Rocket League Login Reward",
+		"thumbImage": "https://i.ibb.co/KW0KgkB/image.png",
+		"mainImage": "https://i.ibb.co/bFv3PQN/image.png",
+		"nameImage": "https://i.ibb.co/n357jmc/image.png",
+		"title": "REDEEM FOR FREE",
+		"discription": "To drive away in these classic SARPBC-10 Wheels, simply log-in to Rocket League through EGS any time between June 3 and June 17!",
+		"price": {
+			"type": "none",
+			"oldPrice": "0",
+			"salePrice": "0"
+		}
+	},
+	{
+		"id": "4",
+		"createdAt": "2021-06-08T07:07:29.118Z",
+		"name": "Genshin Impact",
+		"thumbImage": "https://i.ibb.co/KW0KgkB/image.png",
+		"mainImage": "https://i.ibb.co/2Ww3jc8/image.png",
+		"nameImage": "https://i.ibb.co/RcD70wz/image.png",
+		"title": "WISHLIST",
+		"discription": "Grab a free bonus code “GenshinEpic” and get ready for your open-world adventure in Teyvat, starting June 8th!",
+		"price": {
+			"type": "none",
+			"oldPrice": "0",
+			"salePrice": "0"
+		}
+	},
+	{
+		"id": "5",
+		"createdAt": "2021-06-08T04:43:49.489Z",
+		"name": "ARK: Genesis",
+		"thumbImage": "https://i.ibb.co/KW0KgkB/image.png",
+		"mainImage": "https://i.ibb.co/m9PShCZ/image.png",
+		"nameImage": "",
+		"title": "COMPLETE THE STORY",
+		"discription": "Everything your tribe has built, tamed, and fought for has led to this final challenge.",
+		"price": {
+			"type": "none",
+			"oldPrice": "277000",
+			"salePrice": "235450"
+		}
+	},
+	{
+		"id": "6",
+		"createdAt": "2021-06-07T23:54:37.124Z",
+		"name": "Chivalry 2",
+		"thumbImage": "https://i.ibb.co/KW0KgkB/image.png",
+		"mainImage": "https://i.ibb.co/FHJ9mL0/image.png",
+		"nameImage": "https://i.ibb.co/Ry2Pj0H/image.png",
+		"title": "LAST CHANCE TO PRE-PURCHASE",
+		"discription": "Pre-purchase before June 8 to get an exclusive bonus weapon variant.",
+		"price": {
+			"type": "none",
+			"oldPrice": "370000",
+			"salePrice": "0"
+		}
+	}
+]
