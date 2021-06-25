@@ -37,6 +37,7 @@ function Navbar(props) {
 	};
 	return (
 		<>
+			<div className={`overlays ${dropdownStatus ? "show" : ""}`}></div>
 			<div className="navbar desktop">
 				<div className="navbar__item">
 					<ul className="navbar__contentPrimary">

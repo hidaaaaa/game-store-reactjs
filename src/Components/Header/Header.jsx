@@ -28,6 +28,7 @@ function Header() {
 
 	const handleShowNavbar = () => {
 		setToggleMobile(!toggleMobile);
+		setToggleMenu("");
 	};
 
 	const handleShowMenuUser = () => {
@@ -44,6 +45,7 @@ function Header() {
 
 	return (
 		<nav className="header">
+			<div className={`overlays ${toggleMobile ? "show" : ""}`}></div>
 			<div className="header__logo">
 				<img src={logo} alt="" />
 			</div>

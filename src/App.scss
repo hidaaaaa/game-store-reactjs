@@ -71,21 +71,13 @@ section {
 
 //mobile
 
-@include mobile {
-	$biggest-font-size: 4.5rem;
-	$h1-font-size: 2.25rem;
-	$h2-font-size: 1.5rem;
-	$h3-font-size: 1.25rem;
-	$normal-font-size: 1rem;
-	$small-font-size: 0.875rem;
-	$smaller-font-size: 0.813rem;
-}
-
 .body {
 	padding-left: 10%;
 	padding-right: 10%;
+	position: relative;
+	top: 3.25rem;
 
-	@include desktopAndLess {
+	@include mobile {
 		padding-left: 2%;
 		padding-right: 2%;
 
@@ -96,5 +88,46 @@ section {
 		$normal-font-size: 1rem;
 		$small-font-size: 0.875rem;
 		$smaller-font-size: 0.813rem;
+	}
+
+	@include tablet {
+		padding-left: 2%;
+		padding-right: 2%;
+
+		$biggest-font-size: 4.5rem;
+		$h1-font-size: 2.25rem;
+		$h2-font-size: 1.5rem;
+		$h3-font-size: 1.25rem;
+		$normal-font-size: 1rem;
+		$small-font-size: 0.875rem;
+		$smaller-font-size: 0.813rem;
+	}
+
+	@include tabletAndDesktop {
+		padding-left: 2%;
+		padding-right: 2%;
+
+		$biggest-font-size: 4.5rem;
+		$h1-font-size: 2.25rem;
+		$h2-font-size: 1.5rem;
+		$h3-font-size: 1.25rem;
+		$normal-font-size: 1rem;
+		$small-font-size: 0.875rem;
+		$smaller-font-size: 0.813rem;
+	}
+}
+
+.overlays {
+	top: 0;
+	left: 0;
+	z-index: 1;
+	position: absolute;
+	background-color: rgb(18 18 18 / 50%);
+	width: 100vw;
+	height: 100vh;
+	display: none;
+
+	&.show {
+		display: inline-block;
 	}
 }

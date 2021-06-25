@@ -2,7 +2,13 @@
 @import "../../../../../../../Assets/style/varible.scss";
 
 .slider {
-	@include tabletAndMore {
+	@include tabletAndDesktop {
+		display: flex;
+	}
+	@include smallDesktop {
+		display: flex;
+	}
+	@include largeDesktop {
 		display: flex;
 	}
 
@@ -194,6 +200,9 @@
 							@include smallDesktop {
 								font-size: 0.75rem;
 							}
+							@include tabletAndDesktop {
+								font-size: 0.6rem;
+							}
 						}
 
 						&.active {
@@ -229,7 +238,13 @@
 }
 
 .sliderMobile {
-	@include tabletAndMore {
+	@include tabletAndDesktop {
+		display: none;
+	}
+	@include smallDesktop {
+		display: none;
+	}
+	@include largeDesktop {
 		display: none;
 	}
 	display: flex;
@@ -261,7 +276,7 @@
 				flex: 1 1 0%;
 				padding: 1rem;
 
-				@include tabletAndLess {
+				@include tablet {
 					height: 160px;
 				}
 				@include mobile {

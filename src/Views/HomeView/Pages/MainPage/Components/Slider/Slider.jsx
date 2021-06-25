@@ -1,10 +1,10 @@
 import { Carousel } from "antd";
+import LoadingPage from "Components/LoadingPage/LoadingPage";
 import useWindowSize from "CustomHook/useWindowSize";
 import React, { useEffect, useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
-import SwipeableViews from "react-swipeable-views";
 import { formatPrice } from "utils/formatMoney";
-import "./style/thumbnail.scss";
+import "./style/slider.scss";
 
 function Slider(props) {
 	const [width] = useWindowSize();
@@ -44,13 +44,13 @@ function Slider(props) {
 			});
 	}, []);
 
-	if (loading) return "loading...";
+	if (loading) return <LoadingPage />;
 	return (
 		<div className="sliderContainer">
 			<div className="slider">
-				<div className="slider__container">
+				<ul className={`slider__container list${data.length}`}>
 					{data?.map((item, index) => (
-						<div
+						<li
 							key={index}
 							className={`aspectRatioContainer ${
 								index === position ? "active" : ""
@@ -93,9 +93,9 @@ function Slider(props) {
 									</div>
 								</div>
 							</div>
-						</div>
+						</li>
 					))}
-				</div>
+				</ul>
 
 				<div className="slider__carouselControl">
 					<ul className="listContainer">

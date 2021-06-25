@@ -79,7 +79,7 @@
 			z-index: 1;
 			width: 100%;
 			left: 0;
-			top: 7.25rem;
+			top: 4rem;
 
 			& > a {
 				display: inline-block;
@@ -93,6 +93,8 @@
 
 	&.mobile {
 		& > .navbar__item {
+			z-index: 2;
+
 			& > .navbar__SearchBox {
 				position: static;
 				display: inline-block;
@@ -122,13 +124,22 @@
 }
 
 .desktop {
-	@include desktopAndLess {
+	@include tabletAndDesktop {
+		display: none;
+	}
+	@include mobile {
+		display: none;
+	}
+	@include tablet {
 		display: none;
 	}
 }
 
 .mobile {
-	@include desktop {
+	@include smallDesktop {
+		display: none;
+	}
+	@include largeDesktop {
 		display: none;
 	}
 }

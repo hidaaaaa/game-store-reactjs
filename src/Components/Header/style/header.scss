@@ -1,14 +1,16 @@
 @import "../../../Assets/style/colors.scss";
 @import "../../../Assets/style/varible.scss";
+@import "./responsive.scss";
 
 .header {
+	z-index: 1000;
 	font-size: 0.8rem;
 	width: 100%;
 	height: $header-height;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	position: static;
+	position: fixed;
 	background-color: $third-color;
 
 	&__logo {
@@ -21,6 +23,7 @@
 	}
 
 	&__menu {
+		z-index: 2;
 		height: 100%;
 		width: 90%;
 
@@ -75,134 +78,20 @@
 // responesive
 
 .header {
-	&__menu {
-		@include tablet {
-			position: fixed;
-			right: -100%;
-			top: $header-height;
-			text-align: left;
-			transition: 0.4s;
-			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-			justify-content: space-between;
-			align-items: center;
-
-			background-color: $third-color;
-			height: 80vh;
-
-			& > ul {
-				&.bottom {
-					position: absolute;
-					bottom: 0;
-					display: table;
-					width: 100%;
-
-					& > li {
-						border-color: #464646 !important;
-						display: table-cell;
-						border-top: 1px solid;
-						padding: 1rem;
-						text-align: center;
-
-						&.header__globe {
-							border-right: 1px solid;
-							font-size: $small-font-size;
-							font-weight: $font-medium;
-
-							display: flex;
-							justify-content: center;
-							align-items: center;
-						}
-					}
-				}
-
-				&.top {
-					& > li {
-						padding: 1rem 2rem;
-					}
-				}
-			}
-		}
+	@include mobile {
+		@include mobileHeader();
+	}
+	@include tablet {
+		@include mobileHeader();
+	}
+	@include tabletAndDesktop {
+		@include desktopHeader();
 	}
 
-	@include tabletAndMore {
-		&__menu {
-			display: flex;
-			justify-content: space-between;
-
-			& > ul {
-				display: flex;
-
-				& > li {
-					height: 100%;
-
-					&.active {
-						border-bottom: solid 5px #0078f2;
-					}
-				}
-			}
-		}
-
-		&__toggle {
-			display: none;
-		}
-
-		&__user {
-			& > .user {
-				position: fixed;
-			}
-
-			& > .header__menu {
-				right: -1rem;
-				display: block;
-				top: -150%;
-				position: relative;
-				background-color: #2a2a2a;
-				width: 100%;
-				height: auto;
-				transition: 0.4s;
-				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-				& > ul {
-					flex-direction: column;
-
-					& > .title {
-						display: none;
-					}
-				}
-				&.show-menu {
-					top: $header-height + 0.75rem;
-				}
-			}
-		}
-
-		&__globe {
-			justify-content: flex-end !important;
-
-			& > .globe {
-				position: fixed;
-			}
-			& > .header__menu {
-				right: -1rem;
-				display: block;
-				top: -150%;
-				position: relative;
-				background-color: #2a2a2a;
-				width: 100%;
-				height: auto;
-				transition: 0.4s;
-				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-				& > ul {
-					flex-direction: column;
-
-					& > .title {
-						display: none;
-					}
-				}
-				&.show-menu {
-					top: $header-height + 0.75rem;
-				}
-			}
-		}
+	@include smallDesktop {
+		@include desktopHeader();
+	}
+	@include largeDesktop {
+		@include desktopHeader();
 	}
 }
